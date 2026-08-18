@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كهربائي منازل بالدمام والخبر | صيانة وتركيب كهرباء منزلية</title>
+<meta name="description" content="كهربائي منازل محترف في الدمام، الخبر، حي الشاطئ، والقطيف. صيانة، تركيب، وأعمال طوارئ كهربائية على مدار الساعة.">
+<style>
+  :root{
+    --primary:#0b3d91;
+    --primary-dark:#082a66;
+    --accent:#f5a623;
+    --whatsapp:#25D366;
+    --bg:#f7f8fb;
+    --text:#1c2333;
+    --muted:#5b6274;
+    --white:#ffffff;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(11,61,145,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Tahoma','Segoe UI',Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* Header */
+  header{
+    background:var(--white);
+    position:sticky;
+    top:0;
+    z-index:200;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    transition:box-shadow .25s;
+  }
+  header.scrolled{
+    box-shadow:0 6px 18px rgba(11,61,145,0.12);
+  }
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:14px 0;
+  }
+  .logo{
+    font-size:20px;
+    font-weight:800;
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+  }
+  .logo span{color:var(--accent);}
+  nav{flex:1;display:flex;justify-content:center;}
+  nav ul{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  nav ul li a{
+    position:relative;
+    display:inline-block;
+    padding:9px 14px;
+    border-radius:8px;
+    font-weight:600;
+    color:var(--text);
+    font-size:15px;
+    transition:color .2s, background .2s;
+  }
+  nav ul li a:hover{
+    color:var(--primary);
+    background:#eef2fb;
+  }
+  nav ul li a.active{
+    color:var(--primary);
+    background:#eef2fb;
+  }
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+  }
+  .nav-call{
+    background:var(--primary);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:14px;
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:background .2s, transform .2s;
+  }
+  .nav-call:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+  }
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    width:42px;
+    height:42px;
+    background:#eef2fb;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    flex-shrink:0;
+    padding:0;
+  }
+  .menu-toggle span{
+    display:block;
+    width:20px;
+    height:2.5px;
+    background:var(--primary);
+    border-radius:2px;
+    transition:transform .3s, opacity .3s;
+  }
+  .menu-toggle.open span:nth-child(1){
+    transform:translateY(7.5px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2){
+    opacity:0;
+  }
+  .menu-toggle.open span:nth-child(3){
+    transform:translateY(-7.5px) rotate(-45deg);
+  }
+  .mobile-call{display:none;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);
+    color:#fff;
+    padding:80px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    width:400px;height:400px;
+    background:rgba(245,166,35,0.15);
+    border-radius:50%;
+    top:-150px;
+    left:-100px;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:750px;
+    margin:0 auto;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+    margin-bottom:20px;
+    font-weight:600;
+  }
+  .hero h1{
+    font-size:38px;
+    font-weight:800;
+    margin-bottom:18px;
+    line-height:1.5;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p{
+    font-size:17px;
+    color:#dce4f5;
+    margin-bottom:32px;
+  }
+  .hero-btns{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 30px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:16px;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn-accent{
+    background:var(--accent);
+    color:#1c2333;
+    box-shadow:0 8px 20px rgba(245,166,35,0.35);
+  }
+  .btn-outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid rgba(255,255,255,0.5);
+  }
+
+  /* Areas strip */
+  .areas-strip{
+    background:var(--white);
+    border-bottom:1px solid #eaecf3;
+  }
+  .areas-strip .container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+    padding:18px 20px;
+  }
+  .area-chip{
+    background:#eef2fb;
+    color:var(--primary);
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:700;
+  }
+
+  /* Section titles */
+  section{padding:70px 0;}
+  .section-head{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 45px;
+  }
+  .section-head .eyebrow{
+    color:var(--accent);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:1px;
+    display:block;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-size:30px;
+    font-weight:800;
+    color:var(--primary-dark);
+    margin-bottom:14px;
+  }
+  .section-head p{
+    color:var(--muted);
+    font-size:15.5px;
+  }
+
+  /* About */
+  .about{
+    background:var(--white);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .about-text p{
+    color:var(--muted);
+    margin-bottom:16px;
+    font-size:15.5px;
+  }
+  .about-list{
+    list-style:none;
+    margin-top:20px;
+  }
+  .about-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:12px;
+    font-weight:600;
+    font-size:15px;
+  }
+  .about-list li::before{
+    content:"✔";
+    color:var(--whatsapp);
+    font-weight:900;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .about-card{
+    background:linear-gradient(135deg,#eef2fb,#fdf3e3);
+    border-radius:var(--radius);
+    padding:40px 30px;
+    box-shadow:var(--shadow);
+  }
+  .about-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    text-align:center;
+  }
+  .about-stats .num{
+    font-size:32px;
+    font-weight:900;
+    color:var(--primary);
+  }
+  .about-stats .lbl{
+    font-size:13.5px;
+    color:var(--muted);
+    font-weight:700;
+  }
+
+  /* Why us */
+  .why{background:var(--bg);}
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .why-card{
+    background:var(--white);
+    padding:32px 24px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:transform .25s;
+  }
+  .why-card:hover{transform:translateY(-6px);}
+  .why-icon{
+    width:60px;height:60px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    margin:0 auto 16px;
+    color:#fff;
+  }
+  .why-card h3{
+    font-size:17.5px;
+    margin-bottom:10px;
+    color:var(--text);
+  }
+  .why-card p{
+    color:var(--muted);
+    font-size:14.5px;
+  }
+
+  /* Services */
+  .services{background:var(--white);}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .service-card{
+    border:1px solid #eaecf3;
+    border-radius:var(--radius);
+    padding:26px 22px;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .service-card:hover{
+    border-color:var(--primary);
+    box-shadow:var(--shadow);
+  }
+  .service-card .ico{
+    font-size:24px;
+    margin-bottom:12px;
+  }
+  .service-card h3{
+    font-size:16.5px;
+    margin-bottom:8px;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  /* Areas section */
+  .areas{background:var(--bg);}
+  .areas-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .area-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:26px 16px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .area-card .ico{font-size:26px;margin-bottom:10px;}
+  .area-card h3{font-size:16px;color:var(--primary-dark);}
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    color:#fff;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:28px;
+    margin-bottom:14px;
+    font-weight:800;
+  }
+  .cta p{
+    color:#dce4f5;
+    margin-bottom:30px;
+    font-size:16px;
+  }
+
+  /* Footer */
+  footer{
+    background:#081a3a;
+    color:#c9d2e8;
+    padding:40px 0 20px;
+    text-align:center;
+    font-size:14px;
+  }
+  footer .foot-logo{
+    color:#fff;
+    font-weight:800;
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  footer .foot-contact{
+    margin:16px 0;
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    flex-wrap:wrap;
+    font-weight:600;
+  }
+  footer .copyright{
+    margin-top:20px;
+    color:#7d8bb0;
+    font-size:12.5px;
+  }
+
+  /* Floating buttons */
+  .float-btns{
+    position:fixed;
+    bottom:22px;
+    left:22px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    z-index:999;
+  }
+  .float-btn{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:26px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    animation:pulse 2.4s infinite;
+  }
+  .float-btn.whatsapp{background:var(--whatsapp);}
+  .float-btn.call{background:var(--accent); color:#1c2333; animation-delay:.4s;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45);}
+    70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+  }
+  .float-btn.call{animation-name:pulseCall;}
+  @keyframes pulseCall{
+    0%{box-shadow:0 0 0 0 rgba(245,166,35,0.45);}
+    70%{box-shadow:0 0 0 14px rgba(245,166,35,0);}
+    100%{box-shadow:0 0 0 0 rgba(245,166,35,0);}
+  }
+
+  /* Responsive */
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .areas-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:700px){
+    nav{
+      position:absolute;
+      top:100%;
+      right:0;
+      left:0;
+      background:#fff;
+      box-shadow:0 12px 24px rgba(11,61,145,0.12);
+      border-top:1px solid #eaecf3;
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transition:max-height .3s ease, opacity .25s ease;
+    }
+    nav.open{
+      max-height:420px;
+      opacity:1;
+    }
+    nav ul{
+      flex-direction:column;
+      align-items:stretch;
+      gap:4px;
+      padding:14px;
+    }
+    nav ul li a{
+      display:block;
+      width:100%;
+      padding:13px 16px;
+      font-size:15.5px;
+    }
+    .menu-toggle{display:flex;}
+    .nav-call{display:none;}
+    .mobile-call{
+      display:flex;
+      margin:6px 14px 14px;
+      justify-content:center;
+      background:var(--primary);
+      color:#fff;
+      padding:12px;
+      border-radius:10px;
+      font-weight:700;
+      gap:8px;
+    }
+    .hero h1{font-size:28px;}
+    .hero p{font-size:15px;}
+    .why-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .areas-grid{grid-template-columns:1fr 1fr;}
+    .float-btn{width:52px;height:52px;font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="siteHeader">
+  <div class="container nav-wrap">
+    <div class="logo">⚡ كهربائي <span>المنازل</span></div>
+    <nav id="navMenu">
+      <ul id="navList">
+        <li><a href="#home" class="active">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#why">لماذا نحن</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#areas">مناطق الخدمة</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+      <a href="tel:0541941467" class="mobile-call">📞 اتصل الآن - 0541941467</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:0541941467" class="nav-call">📞 اتصل الآن</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="hero-badge">خدمة 24 ساعة | استجابة سريعة</span>
+    <h1>كهربائي منازل محترف في <span>الدمام والخبر</span></h1>
+    <p>صيانة وتركيب وأعمال طوارئ كهربائية لجميع أنواع المنازل والفلل والشقق، بخبرة عالية وأسعار مناسبة في الدمام، الخبر، حي الشاطئ، والقطيف.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/966541941467" target="_blank" class="btn btn-accent">💬 راسلنا واتساب</a>
+      <a href="tel:0541941467" class="btn btn-outline">📞 اتصل بنا الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- Areas strip -->
+<div class="areas-strip">
+  <div class="container">
+    <span class="area-chip">📍 الدمام</span>
+    <span class="area-chip">📍 الخبر</span>
+    <span class="area-chip">📍 حي الشاطئ</span>
+    <span class="area-chip">📍 القطيف</span>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">تعرف علينا</span>
+      <h2>من نحن</h2>
+      <p>فريق متخصص في أعمال الكهرباء المنزلية بخبرة طويلة في خدمة أحياء الدمام والخبر</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>نحن فريق كهربائيين محترفين متخصصون في تقديم خدمات الكهرباء المنزلية بجودة عالية وأمان تام، نخدم عملاءنا في الدمام والخبر وحي الشاطئ والقطيف وجميع الأحياء المجاورة.</p>
+        <p>نحرص على استخدام أفضل الأدوات والمواد المطابقة للمواصفات، مع الالتزام بمواعيد العمل والشفافية الكاملة في الأسعار قبل البدء بأي عمل.</p>
+        <ul class="about-list">
+          <li>فريق فني مرخص وذو خبرة عملية طويلة</li>
+          <li>قطع غيار ومواد أصلية ومضمونة</li>
+          <li>أسعار واضحة بدون رسوم مخفية</li>
+          <li>ضمان على جميع الأعمال المنجزة</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <div class="about-stats">
+          <div>
+            <div class="num">+10</div>
+            <div class="lbl">سنوات خبرة</div>
+          </div>
+          <div>
+            <div class="num">24/7</div>
+            <div class="lbl">خدمة طوارئ</div>
+          </div>
+          <div>
+            <div class="num">+500</div>
+            <div class="lbl">عميل راضٍ</div>
+          </div>
+          <div>
+            <div class="num">4</div>
+            <div class="lbl">مناطق تغطية</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">ميزاتنا</span>
+      <h2>لماذا نختارنا</h2>
+      <p>أسباب تجعلنا الخيار الأول لأعمال الكهرباء المنزلية في منطقتك</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>سرعة الاستجابة</h3>
+        <p>نصل إليك بسرعة لمعالجة الأعطال والطوارئ الكهربائية في أي وقت</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>ضمان وأمان</h3>
+        <p>جميع أعمالنا مضمونة ومطابقة لمعايير السلامة الكهربائية</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>أسعار مناسبة</h3>
+        <p>تسعير واضح وعادل بدون أي رسوم أو مفاجآت إضافية</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👨‍🔧</div>
+        <h3>فنيون محترفون</h3>
+        <p>طاقم عمل مدرب ومتمرس في جميع أعمال الكهرباء المنزلية</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📍</div>
+        <h3>تغطية شاملة</h3>
+        <p>نخدم الدمام، الخبر، حي الشاطئ، والقطيف وضواحيها</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">☎️</div>
+        <h3>تواصل سهل</h3>
+        <p>احجز موعدك بسهولة عبر الاتصال أو واتساب مباشرة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">خدماتنا</span>
+      <h2>ماذا نقدم لك</h2>
+      <p>مجموعة متكاملة من الخدمات الكهربائية المنزلية</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="ico">🔌</div>
+        <h3>صيانة الأعطال الكهربائية</h3>
+        <p>كشف وإصلاح جميع أنواع الأعطال الكهربائية بسرعة واحترافية</p>
+      </div>
+      <div class="service-card">
+        <div class="ico">💡</div>
+        <h3>تركيب الإنارة</h3>
+        <p>تركيب وصيانة وحدات الإضاءة الداخلية والخارجية</p>
+      </div>
+      <div class="service-card">
+        <div class="ico">🧯</div>
+        <h3>فحص لوحات التوزيع</h3>
+        <p>فحص وصيانة لوحات الكهرباء الرئيسية والفرعية بأمان</p>
+      </div>
+      <div class="service-card">
+        <div class="ico">🏠</div>
+        <h3>تمديدات كهربائية</h3>
+        <p>تمديد وتأسيس الشبكات الكهربائية للمنازل والفلل الجديدة</p>
+      </div>
+      <div class="service-card">
+        <div class="ico">🚨</div>
+        <h3>خدمة طوارئ 24 ساعة</h3>
+        <p>استجابة فورية لحالات الطوارئ والأعطال المفاجئة</p>
+      </div>
+      <div class="service-card">
+        <div class="ico">🔧</div>
+        <h3>صيانة دورية</h3>
+        <p>عقود صيانة دورية لضمان سلامة المنشأة الكهربائية</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">نطاق العمل</span>
+      <h2>مناطق تغطيتنا</h2>
+      <p>نصل إليك أينما كنت في هذه المناطق</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="ico">🏙️</div>
+        <h3>الدمام</h3>
+      </div>
+      <div class="area-card">
+        <div class="ico">🌆</div>
+        <h3>الخبر</h3>
+      </div>
+      <div class="area-card">
+        <div class="ico">🏖️</div>
+        <h3>حي الشاطئ</h3>
+      </div>
+      <div class="area-card">
+        <div class="ico">🌊</div>
+        <h3>القطيف</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>هل لديك عطل كهربائي؟</h2>
+    <p>تواصل معنا الآن واحصل على خدمة سريعة وموثوقة</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/966541941467" target="_blank" class="btn btn-accent">💬 واتساب</a>
+      <a href="tel:0541941467" class="btn btn-outline">📞 0541941467</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="foot-logo">⚡ كهربائي المنازل</div>
+    <p>خدمات كهربائية منزلية احترافية في الدمام والخبر وحي الشاطئ والقطيف</p>
+    <div class="foot-contact">
+      <span>📞 0541941467</span>
+      <span>📍 الدمام - الخبر - حي الشاطئ - القطيف</span>
+    </div>
+    <div class="copyright">© 2026 كهربائي المنازل. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<div class="float-btns">
+  <a href="https://wa.me/966541941467" target="_blank" class="float-btn whatsapp" title="تواصل عبر واتساب">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.117-1.341a9.96 9.96 0 0 0 4.887 1.246h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.182-2.929-7.071A9.935 9.935 0 0 0 12.004 2.003zm0 18.19a8.19 8.19 0 0 1-4.175-1.145l-.3-.178-3.037.796.811-2.96-.196-.304a8.194 8.194 0 0 1-1.256-4.375c0-4.523 3.68-8.203 8.204-8.203 2.19 0 4.25.854 5.799 2.404a8.144 8.144 0 0 1 2.4 5.8c0 4.523-3.68 8.165-8.25 8.165z"/></svg>
+  </a>
+  <a href="tel:0541941467" class="float-btn call" title="اتصل بنا">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#1c2333"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1A18 18 0 0 1 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.21z"/></svg>
+  </a>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const siteHeader = document.getElementById('siteHeader');
+
+  function closeMenu(){
+    navMenu.classList.remove('open');
+    menuToggle.classList.remove('open');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if(!navMenu.contains(e.target) && !menuToggle.contains(e.target)){
+      closeMenu();
+    }
+  });
+
+  // ظل عند التمرير + إبراز الرابط النشط حسب القسم الظاهر
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#navList a');
+
+  function onScroll(){
+    if(window.scrollY > 10){
+      siteHeader.classList.add('scrolled');
+    } else {
+      siteHeader.classList.remove('scrolled');
+    }
+
+    let current = sections[0] ? sections[0].id : '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 90;
+      if(window.scrollY >= top){
+        current = sec.id;
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+</script>
+
+</body>
+</html>
